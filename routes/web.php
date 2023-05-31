@@ -5,6 +5,7 @@ use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\LivrosController;
 use App\Http\Controllers\EstoqueController;
 use App\Http\Controllers\EmprestimosController;
+use App\Http\Controllers\LeituraController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('emprestimo', EmprestimosController::class);
     Route::post('emprestimo/search', [EmprestimosController::class, 'search']);
+
+    Route::resource('leitura', LeituraController::class);
+    Route::post('leitura/search', [LeituraController::class, 'search']);
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name(
         'profile.edit'

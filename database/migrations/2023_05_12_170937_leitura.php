@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('leituramanumanu', function (blueprint $table) {
+        Schema::create('leitura', function (blueprint $table) {
             $table->id();
             $table->date('data_leitura');
-            $table->string('hora_leitura',20);
+            $table->time('hora_leitura');
             $table->float('valor_sensor');
             $table->foreignId('sensor_id')->nullable()->constrained('sensor')->default(null);
             $table->foreignId('mac_id')->nullable()->constrained('mac')->default(null);
@@ -33,6 +33,8 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+
+            Schema::dropIfExists('leitura');
+
     }
 };
