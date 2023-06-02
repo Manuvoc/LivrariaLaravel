@@ -68,6 +68,7 @@
                                   <li><a class="dropdown-item" aria-current="page" href="{{url('livros')}}">Livros</a></li>
                                   <li><a class="dropdown-item" aria-current="page" href="{{url('estoque')}}">Estoque</a></li>
                                   <li><a class="dropdown-item" aria-current="page" href="{{url('emprestimo')}}">Emprestimos</a></li>
+                                  <li><a class="dropdown-item" aria-current="page" href="{{url('leitura')}}">Leituras</a></li>
                     </div>
                     </ul>
                 </div>
@@ -162,7 +163,7 @@
     <br>
     <br>
     <br>
-    
+
     <footer class="bg-light py-5">
         <div class="container px-4 px-lg-5">
             <div class="small text-center text-muted">Copyright &copy; 2022 - By Manoela & Manueli</div>

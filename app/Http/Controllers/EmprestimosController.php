@@ -38,7 +38,6 @@ class EmprestimosController extends Controller
             [
                 'livros_id' => 'O nome é obrigatório',
                 'dataretirada' => 'O valor  é obrigatório',
-
                 'datadevolucao' => 'O valor  é obrigatório',
 
 
@@ -115,7 +114,7 @@ class EmprestimosController extends Controller
                 'livros_id' => $request->livros_id,
                 'dataretirada' => $request->dataretirada,
                 'datadevolucao' => $request->datadevolucao,
-               
+
             ]
         );
 

@@ -19,11 +19,11 @@ class EstoqueController extends Controller
 
     function create()
     {
-        $generolivros = Generolivro::orderBy('nome')->get();
+        
         $livros = Livros::orderBy('nome')->get();
 
 
-        return view('EstoqueForm')->with(['generolivros' => $generolivros,'livros' => $livros]);
+        return view('EstoqueForm')->with(['livros' => $livros]);
     }
 
     function store(Request $request)
@@ -32,7 +32,7 @@ class EstoqueController extends Controller
             [
                 'livros_id' => 'required | max: 120',
                 'quantidade' => 'required',
-                'imagem' => ' nullable|image|mimes:jpeg,jpg,png|max:2048',
+
             ],
             [
                 'livros_id.required' => 'O nome é obrigatório',
@@ -57,13 +57,13 @@ class EstoqueController extends Controller
     function edit($id)
     {
         //select * from Estoque where id = $id;
-        $estoques = Estoque::findOrFail($id);
+        $estoque = Estoque::findOrFail($id);
         //dd($Estoque);
-        $generolivros = Generolivro::orderBy('nome')->get();
+        $livros = Livros::orderBy('nome')->get();
 
         return view('EstoqueForm')->with([
-            'estoques' => $estoques,
-            'generolivros' => $generolivros,
+            'estoque' => $estoque,
+            'livros' => $livros,
         ]);
     }
 
@@ -106,7 +106,7 @@ class EstoqueController extends Controller
                 'livros_id' => $request->livros_id,
                 'quantidade' => $request->quantidade,
                 'generolivro_id' => $request->generolivro_id,
-                
+
             ]
         );
 

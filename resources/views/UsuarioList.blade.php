@@ -69,6 +69,7 @@
                               <li><a class="dropdown-item" aria-current="page" href="{{url('livros')}}">Livros</a></li>
                               <li><a class="dropdown-item" aria-current="page" href="{{url('estoque')}}">Estoque</a></li>
                               <li><a class="dropdown-item" aria-current="page" href="{{url('emprestimo')}}">Emprestimos</a></li>
+                              <li><a class="dropdown-item" aria-current="page" href="{{url('leitura')}}">Leituras</a></li>
                 </div>
                 </ul>
             </div>
@@ -147,7 +148,7 @@
                             <td><img src="/storage/{{ $nome_imagem }}" width="100px" class="img-thumbnail" />
                             </td>
                             <td><a href="{{ action('App\Http\Controllers\UsuarioController@edit', $item->id) }}"><i
-                                        class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>
+                                        class='fa-solid fa-pen-to-square' style='color:black;'></i></a></td>
                             <td>
                                 <form method="POST"
                                     action="{{ action('App\Http\Controllers\UsuarioController@destroy', $item->id) }}">
@@ -165,7 +166,7 @@
         </div>
         <!-- Footer-->
         <br>
-        
+
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5">
                 <div class="small text-center text-muted">Copyright &copy; 2022 - By Manoela & Manueli</div>

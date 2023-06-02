@@ -68,6 +68,7 @@
                                   <li><a class="dropdown-item" aria-current="page" href="{{url('livros')}}">Livros</a></li>
                                   <li><a class="dropdown-item" aria-current="page" href="{{url('estoque')}}">Estoque</a></li>
                                   <li><a class="dropdown-item" aria-current="page" href="{{url('emprestimo')}}">Emprestimos</a></li>
+                                  <li><a class="dropdown-item" aria-current="page" href="{{url('leitura')}}">Leituras</a></li>
                     </div>
                         </ul>
                     </div>
@@ -138,18 +139,24 @@
             </div>
 
             <div class="col-3">
-                <label class="form-label"> SensorId </label><br>
-                <input type="text" class="form-control" name="sensor_id"
-                    value="@if (!empty(old('sensor_id'))) {{ old('sensor_id') }} @elseif(!empty($leitura->sensor_id)) {{ $leitura->sensor_id }} @else {{ '' }} @endif" /><br>
+                <label class="form-label">Sensor Id</label><br>
+                <select name="sensor_id" class="form-select">
+                    @foreach ($sensores as $item)
+                        <option value="{{ $item->id }}">{{ $item->nome }}</option>
+                    @endforeach
+                </select>
             </div>
-
+<br>
             <div class="col-3">
-                <label class="form-label">MacId </label><br>
-                <input type="text" class="form-control" name="mac_id"
-                    value="@if (!empty(old('mac_id'))) {{ old('mac_id') }} @elseif(!empty($leitura->mac_id)) {{ $leitura->mac_id }} @else {{ '' }} @endif" /><br>
+                <label class="form-label">Mac Id</label><br>
+                <select name="mac_id" class="form-select">
+                    @foreach ($macs as $item)
+                        <option value="{{ $item->id }}">{{ $item->nome }}</option>
+                    @endforeach
+                </select>
             </div>
 
-
+            <br>
             <button class="btn btn-success" type="submit">
                 <i class="fa-solid fa-save"></i> Salvar
             </button>

@@ -14,5 +14,12 @@ class Leitura extends Model
         'data_leitura', 'hora_leitura', 'valor_sensor','sensor_id', 'mac_id'
     ];
 
+    public function sensor(){
+        return $this->belongsTo(Sensor::class,'sensor_id','id');
+    }
+    public function mac(){
+        return $this->belongsTo(Mac::class,'mac_id','id');
+    }
+
 
 }

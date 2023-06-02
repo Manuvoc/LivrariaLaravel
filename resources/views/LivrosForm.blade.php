@@ -69,6 +69,7 @@
                                   <li><a class="dropdown-item" aria-current="page" href="{{url('livros')}}">Livros</a></li>
                                   <li><a class="dropdown-item" aria-current="page" href="{{url('estoque')}}">Estoque</a></li>
                                   <li><a class="dropdown-item" aria-current="page" href="{{url('emprestimo')}}">Emprestimos</a></li>
+                                  <li><a class="dropdown-item" aria-current="page" href="{{url('leitura')}}">Leituras</a></li>
                     </div>
                         </ul>
                     </div>

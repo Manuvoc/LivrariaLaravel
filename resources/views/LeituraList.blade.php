@@ -69,6 +69,7 @@
                               <li><a class="dropdown-item" aria-current="page" href="{{url('livros')}}">Livros</a></li>
                               <li><a class="dropdown-item" aria-current="page" href="{{url('estoque')}}">Estoque</a></li>
                               <li><a class="dropdown-item" aria-current="page" href="{{url('emprestimo')}}">Emprestimos</a></li>
+                              <li><a class="dropdown-item" aria-current="page" href="{{url('leitura')}}">Leituras</a></li>
                 </div>
                 </ul>
             </div>
@@ -149,11 +150,10 @@
                             <td>{{ $item->data_leitura }}</td>
                             <td>{{ $item->hora_leitura }}</td>
                             <td>{{ $item->valor_sensor }}</td>
-                            <td>{{ $item->sensor_id }}</td>
-                            <td>{{ $item->mac_id }}</td>
-
+                            <td>{{ $item->sensor->nome ?? "" }}</td>
+                            <td>{{ $item->mac->nome ?? "" }}</td>
                             <td><a href="{{ action('App\Http\Controllers\LeituraController@edit', $item->id) }}"><i
-                                        class='fa-solid fa-pen-to-square' style='color:orange;'></i></a></td>
+                                        class='fa-solid fa-pen-to-square' style='color:black;'></i></a></td>
                             <td>
                                 <form method="POST"
                                     action="{{ action('App\Http\Controllers\LeituraController@destroy', $item->id) }}">
